@@ -1,0 +1,66 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     MAIN.@SCRATCH1
+006     @delay_ms1.P1
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000808  M4_A
+000818  @delay_ms1
+000840  M4_P
+00084E  M4_H
+00085E  MAIN
+00085E  @cinit1
+00086E  @cinit2
+
+Project Directory:
+    C:\Users\aulas\Desktop\Pruebas\
+
+Project Files:
+    ccs11.c                                                 [16-mar.-18 17:50  CRC=E4670BCE]
+    tarjeta.h                                               [06-oct.-14 10:59  CRC=7C987D42]
+    ..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h  [03-jul.-13 14:29  CRC=A157EDDE]
+
+Source signature=A3AF64CC
+
+Units:
+    ccs11 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   ccs11.xsym
+    Errors:      ccs11.err
+    Ext Symbols: ccs11.esym
+    INHX32:      ccs11.hex
+    Symbols:     ccs11.sym
+    List:        ccs11.lst
+    Debug/COFF:  ccs11.cof
+    Project:     ccs11.ccspjt
+    Call Tree:   ccs11.tre
+    Statistics:  ccs11.STA

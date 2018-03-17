@@ -1,0 +1,37 @@
+#include <tarjeta.h>
+
+
+int stop = 0; 
+int aux  = 0;
+int pwm = 127;
+
+
+#INT_TIMER0
+void isr_tmr0(){
+   set_timer0(65067);
+   if(aux <= pwm && !stop)
+         M4_A();
+      else
+         M4_P(); 
+   aux++;
+}
+
+void main(){
+   setup_timer_0(RTCC_INTERNAL);
+   enable_interrupts(INT_TIMER0);
+   enable_interrupts(GLOBAL);    
+   while(TRUE){
+      if (IN1) stop = 1; 
+      else stop = 0; 
+//!      if(IN1) pwm = 0; 
+//!      else pwm = 127; 
+ 
+      
+ 
+      if(P2){
+         pwm += 10;
+         while (P2){}    
+      }
+   }
+}
+

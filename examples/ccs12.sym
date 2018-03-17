@@ -1,0 +1,84 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     stop
+017     aux
+018     pwm
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000896  M4_A
+0008A6  M4_P
+0008B6  isr_tmr0
+0008D6  @cinit1
+0008D6  MAIN
+0008F0  @cinit2
+
+Project Directory:
+    C:\Users\aulas\Desktop\Pruebas\
+
+Project Files:
+    ccs12.c                                                 [16-mar.-18 18:27  CRC=C0B4EDBB]
+    tarjeta.h                                               [06-oct.-14 10:59  CRC=7C987D42]
+    ..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h  [03-jul.-13 14:29  CRC=A157EDDE]
+
+Source signature=7FFD46B9
+
+Units:
+    ccs12 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   ccs12.xsym
+    Errors:      ccs12.err
+    Ext Symbols: ccs12.esym
+    INHX32:      ccs12.hex
+    Symbols:     ccs12.sym
+    List:        ccs12.lst
+    Debug/COFF:  ccs12.cof
+    Project:     ccs12.ccspjt
+    Call Tree:   ccs12.tre
+    Statistics:  ccs12.STA

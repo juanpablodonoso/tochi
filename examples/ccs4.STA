@@ -1,0 +1,47 @@
+
+ROM used:   100/16384 (0%)
+            104/16384 (0%) including unused fragments
+
+            0.1 Average locations per line
+            2.4 Average locations per statement
+
+RAM used:   5/2048 (0%) at main() level
+            6/2048 (0%) worst case
+
+Stack used: 1 worst case (1 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   15     6  14  ccs4.c
+  150    36  86  tarjeta.h
+  821     0   0  ..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+----- -----
+  986    42 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     40  20    1    88  2.7  @delay_ms1
+0     56  28    1    86  1.6  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               2
+    Statements              42
+    Comments                171
+    Volume (V)              220
+    Difficulty (D)          4.2
+    Effort to implement (E) 922
+    Time to implement (T)   1 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    146
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-007FE     0  2048  
+00800-00806     4  4  
+00808-07FFE    96  30616  
+
+
+

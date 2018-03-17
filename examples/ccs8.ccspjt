@@ -1,0 +1,19 @@
+[PROJECT]
+Target=ccs8.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.008
+Compiler=PCH
+[Target Data]
+FileList=ccs8.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Users\b\Desktop\8_GII\SMP\Pruebas\
+[ccs8.c]
+Type=4
+[mru-list]
+1=ccs8.c
+[Opened Files]
+1=ccs8.c
+2=
+[Units]
+Count=1
+1=ccs8 (main)

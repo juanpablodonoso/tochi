@@ -1,0 +1,20 @@
+[PROJECT]
+Target=ccs12.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.008
+Compiler=PCH
+[Target Data]
+FileList=ccs12.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Users\aulas\Desktop\Pruebas\
+[ccs12.c]
+Type=4
+[mru-list]
+1=ccs12.c
+[Opened Files]
+1=ccs9.c
+2=ccs12.c
+3=
+[Units]
+Count=1
+1=ccs12 (main)

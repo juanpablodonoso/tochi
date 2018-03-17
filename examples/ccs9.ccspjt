@@ -1,0 +1,20 @@
+[PROJECT]
+Target=ccs9.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.008
+Compiler=PCH
+[Target Data]
+FileList=ccs9.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Users\aulas\Desktop\Pruebas\;C:\Users\aulas\Desktop\Pruebas\C:\Program Files (x86)\PICC\Devices\;E:\SMP\Pruebas\
+[ccs9.c]
+Type=4
+[mru-list]
+1=ccs9.c
+[Opened Files]
+1=ccs9.c
+2=
+3=
+[Units]
+Count=1
+1=ccs9 (main)

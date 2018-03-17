@@ -1,0 +1,79 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000896  isr_tmr0
+0008A8  @cinit1
+0008A8  MAIN
+0008BA  @cinit2
+
+Project Directory:
+    C:\Users\aulas\Desktop\Pruebas\
+
+Project Files:
+    ccs6.c                                                  [09-mar.-18 18:39  CRC=B723CC71]
+    tarjeta.h                                               [06-oct.-14 10:59  CRC=7C987D42]
+    ..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h  [03-jul.-13 14:29  CRC=A157EDDE]
+
+Source signature=766C256F
+
+Units:
+    ccs6 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   ccs6.xsym
+    Errors:      ccs6.err
+    Ext Symbols: ccs6.esym
+    INHX32:      ccs6.hex
+    Symbols:     ccs6.sym
+    List:        ccs6.lst
+    Debug/COFF:  ccs6.cof
+    Project:     ccs6.ccspjt
+    Call Tree:   ccs6.tre
+    Statistics:  ccs6.STA
