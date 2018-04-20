@@ -1,5 +1,4 @@
 #include <tarjeta.h>
-static const int tmr0 = 65067; 
 
 
 int stop = 0; 

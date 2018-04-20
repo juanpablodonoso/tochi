@@ -1,6 +1,8 @@
 ÀÄccs12
    ÃÄMAIN  0/70  Ram=0
    ³  ÀÄ@cinit1  (Inline)  Ram=0
-   ÀÄisr_tmr0  0/32  Ram=0
-      ÃÄM4_A  0/16  Ram=0
-      ÀÄM4_P  0/16  Ram=0
+   ÀÄisr_tmr0  0/36  Ram=0
+      ÃÄM1_A  0/16  Ram=0
+      ÃÄM2_H  0/16  Ram=0
+      ÃÄM1_P  0/16  Ram=0
+      ÀÄM2_P  0/16  Ram=0

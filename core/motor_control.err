@@ -1,0 +1,5 @@
+*** Error 18 "motor_control.c" Line 1(9,20): File can not be opened
+    Not in "C:\Program Files (x86)\PICC\Devices\tarjeta.h"
+    Not in "C:\Program Files (x86)\PICC\Drivers\tarjeta.h"
+    Not in project "C:\Users\pPabl\Desktop\tochi\core\tarjeta.h"
+*** Error 128 "motor_control.c" Line 1(9,16): A #DEVICE required before this line

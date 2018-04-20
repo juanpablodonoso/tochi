@@ -9,10 +9,14 @@ int pwm = 127;
 #INT_TIMER0
 void isr_tmr0(){
    set_timer0(65067);
-   if(aux <= pwm && !stop)
-         M4_A();
-      else
-         M4_P(); 
+   if(aux <= pwm && !stop){
+         M1_A();
+         M2_H(); 
+   }else{
+         M1_P(); 
+         M2_P(); 
+      }
+         
    aux++;
 }
 
@@ -25,9 +29,6 @@ void main(){
       else stop = 0; 
 //!      if(IN1) pwm = 0; 
 //!      else pwm = 127; 
- 
-      
- 
       if(P2){
          pwm += 10;
          while (P2){}    

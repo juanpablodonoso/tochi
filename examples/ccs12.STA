@@ -1,9 +1,9 @@
 
-ROM used:   280/16384 (1%)
-            284/16384 (1%) including unused fragments
+ROM used:   316/16384 (1%)
+            320/16384 (1%) including unused fragments
 
             0.3 Average locations per line
-            5.2 Average locations per statement
+            5.4 Average locations per statement
 
 RAM used:   25/2048 (1%) at main() level
             25/2048 (1%) worst case
@@ -13,38 +13,40 @@ Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   38    18  33  ccs12.c
-  150    36  67  tarjeta.h
-  821     0   0  ..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+   39    22  38  ccs12.c
+  150    36  62  tarjeta.h
+  821     0   0  ..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
 ----- -----
- 1009    54 Total
+ 1010    58 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
-0     16   3    0    48  1.1  M4_A
-0     16   3    0    67  0.4  M4_P
-0     32   6    0   102  3.6  isr_tmr0
-0     70  12    0   255  4.1  MAIN
- Inline         0   144  1.7  @cinit1
+0     16   3    0    48  1.1  M1_A
+0     16   3    0    48  1.1  M1_P
+0     16   3    0    48  1.1  M2_H
+0     16   3    0    48  1.1  M2_P
+0     36   6    0   141  3.8  isr_tmr0
+0     70  11    0   255  4.1  MAIN
+ Inline         0             @cinit1
 
 Program metrics:
-    Functions               5
-    Statements              54
+    Functions               6
+    Statements              58
     Comments                173
-    Volume (V)              930
-    Difficulty (D)          9.2
-    Effort to implement (E) 8573
-    Time to implement (T)   8 minutes
+    Volume (V)              922
+    Difficulty (D)          12.0
+    Effort to implement (E) 11105
+    Time to implement (T)   10 minutes
     Est Delivered Bugs (B)  0
     Cyclomatic Complexity   3
-    Maintainability (MI)    120
+    Maintainability (MI)    153
 
  Segment     Used  Free
 -----------  ----  ----
 00000-007FE     0  2048  
 00800-00806     4  4  
 00808-00894   142  0  
-00896-07FFE   134  30436  
+00896-07FFE   170  30400  
 
 
 

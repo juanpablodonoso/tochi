@@ -1,5 +1,4 @@
 #include <tarjeta.h>
-static const int tmr0 = 65067; 
 
 
 int stop = 0; 
@@ -12,8 +11,10 @@ void isr_tmr0(){
    set_timer0(65067);
    if(aux <= pwm && !stop)
          M4_A();
+         M3_A(); 
       else
          M4_P(); 
+         M3_P(); 
    aux++;
 }
 

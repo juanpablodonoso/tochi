@@ -1,16 +1,16 @@
-CCS PCH C Compiler, Version 5.008, 5967               17-abr.-18 17:47
+CCS PCH C Compiler, Version 5.008, 5967               17-abr.-18 19:10
 
-               Filename:   C:\Users\pPabl\Desktop\tochi\examples\ccs12.lst
+               Filename:   C:\Users\pPabl\Desktop\tochi\examples\lapa.lst
 
-               ROM used:   316 bytes (1%)
-                           Largest free fragment is 30400
-               RAM used:   25 (1%) at main() level
-                           25 (1%) worst case
+               ROM used:   372 bytes (1%)
+                           Largest free fragment is 30344
+               RAM used:   27 (1%) at main() level
+                           27 (1%) worst case
                Stack used: 2 locations (0 in main + 2 for interrupts)
                Stack size: 31
 
 *
-0800:  GOTO   08FA
+0800:  GOTO   0906
 *
 0808:  MOVWF  04
 080A:  MOVFF  FD8,05
@@ -32,7 +32,7 @@ CCS PCH C Compiler, Version 5.008, 5967               17-abr.-18 17:47
 0848:  BTFSS  FF2.5
 084A:  GOTO   0854
 084E:  BTFSC  FF2.2
-0850:  GOTO   08D6
+0850:  GOTO   08CE
 0854:  MOVFF  0E,00
 0858:  MOVFF  0F,01
 085C:  MOVFF  10,02
@@ -88,15 +88,16 @@ CCS PCH C Compiler, Version 5.008, 5967               17-abr.-18 17:47
 ....................  
 .................... void M1_A(){ 
 ....................    output_high(PIN_A1); 
-0896:  BCF    F92.1
-0898:  BSF    F89.1
+*
+08A4:  BCF    F92.1
+08A6:  BSF    F89.1
 ....................    output_high(PIN_D7); 
-089A:  BCF    F95.7
-089C:  BSF    F8C.7
+08A8:  BCF    F95.7
+08AA:  BSF    F8C.7
 ....................    output_low(PIN_D6); 
-089E:  BCF    F95.6
-08A0:  BCF    F8C.6
-08A2:  GOTO   08EA (RETURN)
+08AC:  BCF    F95.6
+08AE:  BCF    F8C.6
+08B0:  RETURN 0
 .................... } 
 ....................  
 .................... void M1_H(){ 
@@ -107,16 +108,15 @@ CCS PCH C Compiler, Version 5.008, 5967               17-abr.-18 17:47
 ....................  
 .................... void M1_P(){ 
 ....................    output_high(PIN_A1); 
-*
-08B6:  BCF    F92.1
-08B8:  BSF    F89.1
+08B2:  BCF    F92.1
+08B4:  BSF    F89.1
 ....................    output_low(PIN_D7); 
-08BA:  BCF    F95.7
-08BC:  BCF    F8C.7
+08B6:  BCF    F95.7
+08B8:  BCF    F8C.7
 ....................    output_low(PIN_D6); 
-08BE:  BCF    F95.6
-08C0:  BCF    F8C.6
-08C2:  GOTO   08F0 (RETURN)
+08BA:  BCF    F95.6
+08BC:  BCF    F8C.6
+08BE:  RETURN 0
 .................... } 
 ....................  
 .................... void M2_A(){ 
@@ -127,30 +127,29 @@ CCS PCH C Compiler, Version 5.008, 5967               17-abr.-18 17:47
 ....................  
 .................... void M2_H(){ 
 ....................    output_high(PIN_A0); 
-*
-08A6:  BCF    F92.0
-08A8:  BSF    F89.0
+08C0:  BCF    F92.0
+08C2:  BSF    F89.0
 ....................    output_low(PIN_C2); 
-08AA:  BCF    F94.2
-08AC:  BCF    F8B.2
+08C4:  BCF    F94.2
+08C6:  BCF    F8B.2
 ....................    output_high(PIN_D5); 
-08AE:  BCF    F95.5
-08B0:  BSF    F8C.5
-08B2:  GOTO   08EC (RETURN)
+08C8:  BCF    F95.5
+08CA:  BSF    F8C.5
+08CC:  RETURN 0
 .................... } 
 ....................  
 .................... void M2_P(){ 
 ....................    output_high(PIN_A0); 
 *
-08C6:  BCF    F92.0
-08C8:  BSF    F89.0
+0896:  BCF    F92.0
+0898:  BSF    F89.0
 ....................    output_low(PIN_C2); 
-08CA:  BCF    F94.2
-08CC:  BCF    F8B.2
+089A:  BCF    F94.2
+089C:  BCF    F8B.2
 ....................    output_low(PIN_D5); 
-08CE:  BCF    F95.5
-08D0:  BCF    F8C.5
-08D2:  GOTO   08F2 (RETURN)
+089E:  BCF    F95.5
+08A0:  BCF    F8C.5
+08A2:  RETURN 0
 .................... } 
 ....................  
 .................... void M3_A(){ 
@@ -240,93 +239,161 @@ CCS PCH C Compiler, Version 5.008, 5967               17-abr.-18 17:47
 ....................  
 ....................  
 ....................  
-.................... int stop = 0;  
+.................... // flags para controlar los movimientos  
+.................... int stop = 0, 
+....................     stop_izq = 0,  
+....................     parar = 0; 
 .................... int aux  = 0; 
-.................... int pwm = 127; 
+.................... int pwm = 90; 
+....................  
+....................  
 ....................  
 ....................  
 .................... #INT_TIMER0 
 .................... void isr_tmr0(){ 
 ....................    set_timer0(65067); 
-08D6:  MOVLW  FE
-08D8:  MOVWF  FD7
-08DA:  MOVLW  2B
-08DC:  MOVWF  FD6
-....................    if(aux <= pwm && !stop){ 
-08DE:  MOVF   17,W
-08E0:  SUBWF  18,W
-08E2:  BNC   08EE
-08E4:  MOVF   16,F
-08E6:  BNZ   08EE
-....................          M1_A(); 
-08E8:  BRA    0896
-....................          M2_H();  
-08EA:  BRA    08A6
-....................    }else{ 
-08EC:  BRA    08F2
-....................          M1_P();  
-08EE:  BRA    08B6
+*
+08CE:  MOVLW  FE
+08D0:  MOVWF  FD7
+08D2:  MOVLW  2B
+08D4:  MOVWF  FD6
+....................    if(aux <= pwm){ 
+08D6:  MOVF   19,W
+08D8:  SUBWF  1A,W
+08DA:  BNC   08FE
+....................         if(stop) { // activado el bumper derecho  
+08DC:  MOVF   16,F
+08DE:  BZ    08E6
 ....................          M2_P();  
-08F0:  BRA    08C6
-....................       } 
+08E0:  RCALL  0896
+....................          M1_A();  
+08E2:  RCALL  08A4
+....................         }else if(stop_izq){ // activo el bumber izquierdo 
+08E4:  BRA    08FE
+08E6:  MOVF   17,F
+08E8:  BZ    08F0
+....................          M1_P();  
+08EA:  RCALL  08B2
+....................          M2_H();  
+08EC:  RCALL  08C0
+....................         }else if(parar){ // PARADLO TODO!  
+08EE:  BRA    08FE
+08F0:  MOVF   18,F
+08F2:  BZ    08FA
+....................          M1_P();  
+08F4:  RCALL  08B2
+....................          M2_P();  
+08F6:  RCALL  0896
+....................         } else{ // todos avanzar  
+08F8:  BRA    08FE
+....................          M1_A(); 
+08FA:  RCALL  08A4
+....................          M2_H();  
+08FC:  RCALL  08C0
+....................         }         
+....................    }else{ 
+....................           
+....................    } 
 ....................           
 ....................    aux++; 
-08F2:  INCF   17,F
-08F4:  BCF    FF2.2
-08F6:  GOTO   0854
+08FE:  INCF   19,F
+0900:  BCF    FF2.2
+0902:  GOTO   0854
 .................... } 
 ....................  
 .................... void main(){ 
-08FA:  CLRF   FF8
-08FC:  BCF    FD0.7
-08FE:  BSF    07.7
-0900:  CLRF   16
-0902:  CLRF   17
-0904:  MOVLW  7F
-0906:  MOVWF  18
-0908:  MOVF   FC1,W
-090A:  ANDLW  C0
-090C:  IORLW  0F
-090E:  MOVWF  FC1
-0910:  MOVLW  07
-0912:  MOVWF  FB4
+0906:  CLRF   FF8
+0908:  BCF    FD0.7
+090A:  BSF    07.7
+090C:  CLRF   16
+090E:  CLRF   17
+0910:  CLRF   18
+0912:  CLRF   19
+0914:  MOVLW  5A
+0916:  MOVWF  1A
+0918:  MOVF   FC1,W
+091A:  ANDLW  C0
+091C:  IORLW  0F
+091E:  MOVWF  FC1
+0920:  MOVLW  07
+0922:  MOVWF  FB4
 ....................    setup_timer_0(RTCC_INTERNAL); 
-0914:  MOVLW  80
-0916:  MOVWF  FD5
+0924:  MOVLW  80
+0926:  MOVWF  FD5
 ....................    enable_interrupts(INT_TIMER0); 
-0918:  BSF    FF2.5
+0928:  BSF    FF2.5
 ....................    enable_interrupts(GLOBAL);     
-091A:  MOVLW  C0
-091C:  IORWF  FF2,F
+092A:  MOVLW  C0
+092C:  IORWF  FF2,F
 ....................    while(TRUE){ 
-....................       if (IN1) stop = 1;  
-091E:  BSF    F95.0
-0920:  BTFSS  F83.0
-0922:  BRA    092A
-0924:  MOVLW  01
-0926:  MOVWF  16
-0928:  BRA    092C
-....................       else stop = 0;  
-092A:  CLRF   16
+....................       if (IN1) 
+092E:  BSF    F95.0
+0930:  BTFSS  F83.0
+0932:  BRA    093C
+....................       { 
+....................          stop = 1; 
+0934:  MOVLW  01
+0936:  MOVWF  16
+....................          stop_izq = 0;  
+0938:  CLRF   17
+....................       } else { 
+093A:  BRA    0942
+....................          stop_izq = 0;  
+093C:  CLRF   17
+....................          stop = 1;  
+093E:  MOVLW  01
+0940:  MOVWF  16
+....................       } 
+....................        
+....................       if(IN3) { 
+0942:  BSF    F95.2
+0944:  BTFSS  F83.2
+0946:  BRA    0950
+....................          stop_izq = 1;  
+0948:  MOVLW  01
+094A:  MOVWF  17
+....................          stop = 0;  
+094C:  CLRF   16
+....................       } 
+094E:  BRA    0956
+....................       else { 
+....................          stop_izq = 0; 
+0950:  CLRF   17
+....................          stop = 1;  
+0952:  MOVLW  01
+0954:  MOVWF  16
+....................       } 
+....................        
+....................       // Comprobar hemos pisado línea  
+....................       if(IN4) parar = 0;  
+0956:  BSF    F95.3
+0958:  BTFSS  F83.3
+095A:  BRA    0960
+095C:  CLRF   18
+095E:  BRA    0964
+....................       else parar = 1;  
+0960:  MOVLW  01
+0962:  MOVWF  18
+....................           
 .................... //!      if(IN1) pwm = 0;  
 .................... //!      else pwm = 127;  
 ....................       if(P2){ 
-092C:  BSF    F93.4
-092E:  BTFSC  F81.4
-0930:  BRA    093C
+0964:  BSF    F93.4
+0966:  BTFSC  F81.4
+0968:  BRA    0974
 ....................          pwm += 10; 
-0932:  MOVLW  0A
-0934:  ADDWF  18,F
+096A:  MOVLW  0A
+096C:  ADDWF  1A,F
 ....................          while (P2){}     
-0936:  BSF    F93.4
-0938:  BTFSS  F81.4
-093A:  BRA    0936
+096E:  BSF    F93.4
+0970:  BTFSS  F81.4
+0972:  BRA    096E
 ....................       } 
-093C:  BRA    091E
+0974:  BRA    092E
 ....................    } 
 .................... } 
 ....................  
-093E:  SLEEP 
+0976:  SLEEP 
 
 Configuration Fuses:
    Word  1: 0E24   PLL5 CPUDIV1 USBDIV HSPLL NOFCMEN NOIESO

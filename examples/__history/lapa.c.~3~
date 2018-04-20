@@ -1,0 +1,61 @@
+#include <tarjeta.h>
+
+
+int stop = 0,
+    stop_izq = 0; 
+int aux  = 0;
+int pwm = 127;
+
+
+
+
+#INT_TIMER0
+void isr_tmr0(){
+   set_timer0(65067);
+   if(aux <= pwm){
+        if(stop) { // activado el bumper derecho 
+         M2_P(); 
+         M1_A(); 
+        }else if(stop_izq){ // activo el bumber izquierdo
+         M1_P(); 
+         M2_H(); 
+        }
+        else{ // todos avanzar 
+         M1_A();
+         M2_H(); 
+        }
+        
+         
+   }else{
+         
+   }
+         
+   aux++;
+}
+
+void main(){
+   setup_timer_0(RTCC_INTERNAL);
+   enable_interrupts(INT_TIMER0);
+   enable_interrupts(GLOBAL);    
+   while(TRUE){
+      if (IN1)
+      {
+         stop = 1;
+      } else {
+         stop_izq = 0; 
+      }
+      
+      if(IN3) {
+         stop_izq = 1; 
+      }
+      else 
+         stop_izq = 0;
+//!      if(IN1) pwm = 0; 
+//!      else pwm = 127; 
+      if(P2){
+         pwm += 10;
+         while (P2){}    
+      }
+   }
+}
+

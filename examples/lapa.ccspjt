@@ -1,16 +1,16 @@
 [PROJECT]
-Target=ccs12.hex
+Target=lapa.hex
 Processor_Text=PIC18F4550
 CCSVersion=5.008
 Compiler=PCH
 [Target Data]
-FileList=ccs12.c
+FileList=lapa.c
 [Directories]
-Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Users\aulas\Desktop\Pruebas\;C:\Users\pPabl\Desktop\tochi\examples\
-[ccs12.c]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Users\pPabl\Desktop\tochi\examples\
+[lapa.c]
 Type=4
 [mru-list]
-1=ccs12.c
+1=lapa.c
 [Opened Files]
 1=..\..\..\AppData\Local\Temp\Temp1_tochi.zip\tochi\examples\tarjeta.h
 2=..\..\..\AppData\Local\Temp\Temp1_tochi.zip\tochi\examples\ccs12.c
@@ -18,7 +18,8 @@ Type=4
 4=..\..\..\AppData\Local\Temp\Temp1_tochi.zip\tochi\examples\ccs11.c
 5=ccs9.c
 6=E:\SMP\Pruebas\ccs11.c
-7=
+7=lapa.c
+8=
 [Units]
 Count=1
-1=ccs12 (main)
+1=lapa (main)

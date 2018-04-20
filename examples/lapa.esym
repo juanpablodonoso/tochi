@@ -1,7 +1,8 @@
-D G "__PCH__" 0 40 ""5.008""
-D G "__DEVICE__" 0 40 "4550"
-D G "__DATE__" 0 40 ""17-abr.-18""
-D G "__TIME__" 0 40 ""17:46:59""
+D G "IN5" 1 138 "input(PIN_D4)"
+D G "__PCH__" 0 75 ""5.008""
+D G "__DEVICE__" 0 75 "4550"
+D G "__DATE__" 0 75 ""17-abr.-18""
+D G "__TIME__" 0 75 ""19:10:34""
 D G "_TARJETA_" 1 3 ""
 c L "set_tris_a" 2 1 22 "FUNCTION"
 v L "value" 2 36 "int8" `54 
@@ -933,12 +934,19 @@ D G "IN2" 1 135 "input(PIN_D1)"
 D G "IN3" 1 136 "input(PIN_D2)"
 D G "IN4" 1 137 "input(PIN_D3)"
 D G "IN5" 1 138 "input(PIN_D4)"
-V G "stop" 0 4 "int8" `646 
-V G "aux" 0 5 "int8" `647 
-V G "pwm" 0 6 "int8" `648 
-F G "isr_tmr0" 0 10 "void()" `649 
-F G "MAIN" 0 23 "void()" `650 
-C L "MAIN" 0 30 2 "FUNCTION"
+V G "stop" 0 5 "int8" `646 
+V G "stop_izq" 0 6 "int8" `647 
+V G "parar" 0 7 "int8" `648 
+V G "aux" 0 8 "int8" `649 
+V G "pwm" 0 9 "int8" `650 
+F G "isr_tmr0" 0 15 "void()" `651 
+C L "isr_tmr0" 0 4 1 "FUNCTION"
+C L "isr_tmr0" 0 4 1 "FUNCTION"
+C L "isr_tmr0" 0 4 1 "FUNCTION"
+C L "isr_tmr0" 0 4 1 "FUNCTION"
+F G "MAIN" 0 38 "void()" `652 
+C L "MAIN" 0 4 1 "FUNCTION"
+C L "MAIN" 0 4 2 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1
