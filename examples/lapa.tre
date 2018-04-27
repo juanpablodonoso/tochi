@@ -1,12 +1,18 @@
 ÀÄlapa
-   ÃÄMAIN  0/114  Ram=0
-   ³  ÀÄ@cinit1  (Inline)  Ram=0
-   ÀÄisr_tmr0  0/56  Ram=0
-      ÃÄM2_P  0/14  Ram=0
-      ÃÄM1_A  0/14  Ram=0
-      ÃÄM1_P  0/14  Ram=0
-      ÃÄM2_H  0/14  Ram=0
-      ÃÄM1_P  0/14  Ram=0
-      ÃÄM2_P  0/14  Ram=0
-      ÃÄM1_A  0/14  Ram=0
-      ÀÄM2_H  0/14  Ram=0
+   ÃÄMAIN  0/134  Ram=0
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÀÄ_avanzar  0/6  Ram=0
+   ³     ÃÄM1_A  0/14  Ram=0
+   ³     ÀÄM3_H  0/14  Ram=0
+   ÀÄisr_tmr0  0/52  Ram=0
+      ÃÄavanza_derecha  0/8  Ram=0
+      ³  ÃÄM1_P  0/14  Ram=0
+      ³  ÀÄM3_H  0/14  Ram=0
+      ÃÄavanza_izquierda  0/8  Ram=0
+      ³  ÃÄM3_P  0/14  Ram=0
+      ³  ÀÄM1_A  0/14  Ram=0
+      ÃÄ_stop  0/8  Ram=0
+      ³  ÃÄM1_P  0/14  Ram=0
+      ³  ÀÄM3_P  0/14  Ram=0
+      ÀÄ_avanzar  0/6  Ram=0
+         ÀÄ*

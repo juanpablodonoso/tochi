@@ -1,4 +1,1 @@
->>> Warning 207 "lapa.c" Line 34(1,1): Code has no effect
->>> Warning 207 "lapa.c" Line 35(1,1): Code has no effect
-*** Error 12 "lapa.c" Line 68(18,19): Undefined identifier  -- init
-*** Error 12 "lapa.c" Line 74(18,19): Undefined identifier  -- init
+>>> Warning 216 "lapa.c" Line 80(1,2): Interrupts disabled during call to prevent re-entrancy:  (_avanzar)

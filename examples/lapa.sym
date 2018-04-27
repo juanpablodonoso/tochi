@@ -21,16 +21,17 @@
 013     @INTERRUPT_AREA
 014     @INTERRUPT_AREA
 015     @INTERRUPT_AREA
-016     stop
-017     stop_izq
-018     parar
-019     aux
-01A     pwm
+016     @INTERRUPT_AREA
+017     choque_derecha
+018     choque_izquierda
+019     parar
+01A     aux
+01B     pwm
 F83     PSP_DATA
 FB4.6   C1OUT
 FB4.7   C2OUT
-FBB     CCP_2
 FBB     CCP_2_LOW
+FBB     CCP_2
 FBC     CCP_2_HIGH
 FBE     CCP_1_LOW
 FBE     CCP_1
@@ -38,31 +39,35 @@ FBF     CCP_1_HIGH
 FE1-FE2 @WRITE_PACKED_MEMORY.P1
 FE1-FE2 @READ_PACKED_MEMORY.P2
 FE9-FEA @READ_PACKED_MEMORY.P1
-FE9-FEA @READ_PROGRAM_MEMORY.P2
-FE9-FEA @WRITE_PACKED_MEMORY.P3
-FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
 FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
 FF6-FF8 @READ_PROGRAM_MEMORY.P2
 
 ROM Allocation:
-000896  M2_P
-0008A4  M1_A
-0008B2  M1_P
-0008C0  M2_H
-0008CE  isr_tmr0
-000906  @cinit1
-000906  MAIN
-000924  @cinit2
+000896  M1_P
+0008A4  M3_H
+0008B2  avanza_derecha
+0008BA  M3_P
+0008C8  M1_A
+0008D6  avanza_izquierda
+0008DE  _stop
+0008E6  _avanzar
+0008EC  isr_tmr0
+000920  @cinit1
+000920  MAIN
+00093E  @cinit2
 
 Project Directory:
     C:\Users\pPabl\Desktop\tochi\examples\
 
 Project Files:
-    lapa.c                                                  [17-abr.-18 19:10  CRC=2E602143]
+    lapa.c                                                  [27-abr.-18 17:48  CRC=05178A2D]
     tarjeta.h                                               [06-oct.-14 11:59  CRC=7C987D42]
     ..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [03-jul.-13 15:29  CRC=A157EDDE]
 
-Source signature=EDA87A41
+Source signature=C45FE32B
 
 Units:
     lapa (main)
